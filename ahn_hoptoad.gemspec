@@ -4,7 +4,7 @@ require "ahn_hoptoad/version"
 
 Gem::Specification.new do |s|
   s.name        = "ahn_hoptoad"
-  s.version     = AhnHoptoad::VERSION
+  s.version     = "1.0.0"
   s.date        = Date.today.to_s
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ben Klang"]
@@ -12,8 +12,6 @@ Gem::Specification.new do |s|
   s.homepage    = "http://github.com/mojolingo/ahn_hoptoad"
   s.summary     = %q{Send Adhearsion application exceptions to Hoptoad}
   s.description = %q{Send Adhearsion application exceptions to Hoptoad}
-
-  s.rubyforge_project = "ahn-rails"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
