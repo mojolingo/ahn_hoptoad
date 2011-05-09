@@ -17,7 +17,6 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
-  s.has_rdoc      = false
 
   s.add_runtime_dependency("adhearsion", [">= 1.1.0"])
   s.add_runtime_dependency("toadhopper", [">= 1.2.0"])
