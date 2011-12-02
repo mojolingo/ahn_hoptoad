@@ -4,7 +4,7 @@ require "ahn_hoptoad/version"
 
 Gem::Specification.new do |s|
   s.name        = "ahn_hoptoad"
-  s.version     = "1.0.0"
+  s.version     = AhnHoptoad::VERSION
   s.date        = Date.today.to_s
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ben Klang"]
