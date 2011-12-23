@@ -1,7 +1,8 @@
 adhearsion-reporter
 ==================
 
-Report Adhearsion application exceptions and deployments to
+Report Adhearsion application exceptions and deployments to:
+
 * [Airbrake](http://airbrake.io)
 * [Errbit](https://github.com/errbit/errbit.git)
 
