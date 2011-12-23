@@ -4,7 +4,7 @@ require "adhearsion/reporter/version"
 
 Gem::Specification.new do |s|
   s.name        = "adhearsion-reporter"
-  s.version     = Adhearsion::Reporter::VERSION
+  s.version     = Adhearsion::REPORTER_VERSION
   s.date        = Date.today.to_s
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ben Klang"]
