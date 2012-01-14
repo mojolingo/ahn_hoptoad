@@ -9,7 +9,7 @@ module Adhearsion
     end
 
     init :reporter do
-      config = Adhearsion.conf[:reporter]
+      config = Adhearsion.config[:reporter]
       notifier = Toadhopper.new config.api_key, config.url
       Events.register_callback(:exception) do |e|
         response = notifier.post!(e)
