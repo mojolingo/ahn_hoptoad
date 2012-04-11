@@ -30,3 +30,9 @@ Adhearsion.config do |config|
   config.reporter.api_key = "YOUR API KEY HERE"
 end
 ```
+
+Copyright
+---------
+
+Copyright (C) 2012 Adhearsion Foundation Inc.
+Released under the MIT License - Check [License file](https://github.com/adhearsion/adhearsion-reporter/blob/master/LICENSE)
