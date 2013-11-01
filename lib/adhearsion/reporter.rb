@@ -1,25 +1,24 @@
 # encoding: utf-8
+
 require 'toadhopper'
 
+Adhearsion::Reporter = Class.new Adhearsion::Plugin
+
+require 'adhearsion/reporter/hoptoad_notifier'
+
 module Adhearsion
-  class Reporter < Plugin
+  class Reporter
     config :reporter do
-      api_key nil,                  :desc => "The Airbrake/Errbit API key"
-      url     "http://airbrake.io", :desc => "Base URL for notification service"
+      api_key nil,                  desc: "The Airbrake/Errbit API key"
+      url     "http://airbrake.io", desc: "Base URL for notification service"
+      notifier Adhearsion::Reporter::HoptoadNotifier, desc: "The class that will act as the notifier."
+      enable true, desc: "Disables notifications. Useful for testing."
     end
 
     init :reporter do
-      config = Adhearsion.config[:reporter]
-      notifier = Toadhopper.new config.api_key, :notify_host => config.url
+      Reporter.config.notifier.instance.init
       Events.register_callback(:exception) do |e, logger|
-        response = notifier.post!(e)
-        if !response.errors.empty? || !(200..299).include?(response.status.to_i)
-          logger.error "Error posting exception to #{config.url}! Response code #{response.status}"
-          response.errors.each do |error|
-            logger.error "#{error}"
-          end
-          logger.warn "Original exception message: #{e.message}"
-        end
+        Reporter.config.notifier.instance.notify e
       end
     end
   end
