@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-require 'newrelic_rpm'
+require 'new_relic/control'
 
 module Adhearsion
   class Reporter
